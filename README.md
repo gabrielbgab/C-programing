@@ -1,4 +1,10 @@
 # C-programing
+Desbloquear planilhas excel
+
+Renomeio o arquivo excel para o nome free .  Exemplo  planilha_de_compras.xslx renomeie para free.xslx
+copie o arquivo renomeado para a pasta desbloqueia_arquivo
+Aperte o .bat
+Demora um pouco, eficiencia O(n³).
 
 Unlock excel.
 
@@ -7,54 +13,14 @@ Rename to free. Drap and drop excel file to "Desbloquear_excel" and click on the
 Work only for windows.
 
 
-CODE of .bat file
-
-
- dir /b | Findstr  "free" >inicio.txt 
-
- set /p bruno=<inicio.txt
-
-echo %bruno%
-ren %bruno% arquivo.zip
-
-if exist *.zip goto existe
-if not exist *.zip goto nao
-:existe
-%arquivo%=*.zip
-echo arquivo enconrtado
-echo %arquivo%
-goto fim
-
-:nao
-
-echo deu pau fodeu!
-:fim
-
-echo %cd%>caminho.txt
- dir /b | Findstr  ".zip" >ar.txt 
-
-
-powershell.exe -nologo -noprofile -command "&" { Add-Type -A 'System.IO.Compression.FileSystem';$bruno=cat ar.txt ;[IO.Compression.ZipFile]::ExtractToDirectory($bruno, 'gabrielbgab'); }"
-
-
-
-
-
-
-Desbloquear_planilhas_Excel.exe  %cd%\gabrielbgab\xl\worksheets %cd%
-
-
-
-powershell.exe -nologo -noprofile -command "&" { Add-Type -A 'System.IO.Compression.FileSystem';$bruna=cat inicio.txt ;[IO.Compression.ZipFile]::CreateFromDirectory('gabrielbgab', 'gabrielbgab.zip'); }"
-
-
-
-
- set /p bruno=<inicio.txt
-echo %bruno%
-ren gabrielbgab.zip %bruno% 
-
-Echo Planilha Desbloqueada com sucesso!!
-pause
+Logica do algoritmo e o que ele faz:
+1)Muda a extensão de .xlsx para zip
+2)Descompactac o zip e cria uma pasta gabrielbgab com os arquivos
+3)Executa o algoritmo em c que le no diretorio gabrielbgab/xl/worksheets/  os arquivos sheet1.xml,sheet2.xml..ect
+3)Desbloquea alterando o arquivo sheet1.xml, sheet2.xml...etc.. e copia para a pasta atual
+4)Move os arquivos modificados para a pasta gabrielbgab/xl/worksheets/
+5)compacta em .zip a pasta gabrielbgab
+6)muda o nome de .zip para free.xls
+7)a planilha está com as worksheets desblouqueadas
 
 

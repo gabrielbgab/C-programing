@@ -1,5 +1,4 @@
-# C-programing
-Desbloquear planilhas excel
+#Exemplo de integração de VBA com linguagem C com .BAT e com windons powershell
 
 Renomeio o arquivo excel para o nome free .  Exemplo  planilha_de_compras.xslx renomeie para free.xslx
 copie o arquivo renomeado para a pasta desbloqueia_arquivo
